@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.hero-banner {
+  color: white;
+  background-image: url("../img/hero-banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.hero-banner .hero-text-container {
+  padding-top: 100px;
+}
+.hero-banner .hero-text-container .wrapper {
+  margin-top: 50px;
+}
+.hero-banner .hero-text-container .details {
+  margin-left: 32px;
+  padding-top: 82px;
+}
+.hero-banner .hero-text-container .details h2 {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  color: black;
+}
+.hero-banner .hero-text-container .details h4 {
+  margin-top: 100px;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-weight: lighter;
+  color: black;
+}
+.hero-banner .socialbtns {
+  transform: translateY(10%);
+  top: 24%;
+}
+
+.navbar {
+  background-color: none;
+}
+.navbar .navbar-brand img {
+  width: 120px;
+}
+.navbar .navbar-toggler {
+  border: 1px solid rgb(226, 226, 226);
+}
+.navbar .navbar-toggler .navbar-toggler-icon .ham-menu {
+  fill: red;
+}
+.navbar .navbar-nav .nav-item a {
+  margin: 10px;
+  padding: 8px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #000000;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.navbar .navbar-nav .vendor {
+  background: linear-gradient(270deg, #F9C15A 0%, #F6EB6E 100%);
+  display: block;
+}
+.navbar .navbar-nav .vendor:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.navbar .navbar-nav .about_us {
+  background: linear-gradient(270deg, #FDCDAB 0%, #F78D79 100%);
+}
+.navbar .navbar-nav .about_us:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.wrapper {
+  position: relative;
+  height: 12em;
+}
+
+.countdown-container {
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.countdown {
+  display: flex;
+  transform-style: preserve3d;
+  perspective: 500px;
+  height: 10rem;
+  margin: 0 auto;
+}
+
+.countdown.remove {
+  -webkit-animation: hide-countdown 1s cubic-bezier(0, 0.9, 0.56, 1.2) forwards;
+          animation: hide-countdown 1s cubic-bezier(0, 0.9, 0.56, 1.2) forwards;
+  overflow: hidden;
+}
+
+.number,
+.separator {
+  display: block;
+  color: #333;
+  height: 10rem;
+  font-size: 5rem;
+  position: relative;
+  line-height: 10rem;
+  text-align: center;
+  width: 15%;
+}
+
+.separator {
+  margin: 0;
+  width: 2rem;
+}
+
+.new,
+.old,
+.current {
+  color: #333;
+  position: absolute;
+  border-radius: 1rem;
+  height: 10rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.new {
+  -webkit-animation: show-new 0.4s cubic-bezier(0, 0.9, 0.5, 1.2) forwards;
+          animation: show-new 0.4s cubic-bezier(0, 0.9, 0.5, 1.2) forwards;
+}
+
+.old {
+  -webkit-animation: hide-old 2s cubic-bezier(0, 0.9, 0.56, 1.2) forwards;
+          animation: hide-old 2s cubic-bezier(0, 0.9, 0.56, 1.2) forwards;
+}
+
+.countdown section {
+  position: relative;
+}
+
+#js-days:after,
+#js-hours:after,
+#js-minutes:after,
+#js-seconds:after {
+  content: "DAYS";
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: -80px;
+  font-size: 25px;
+}
+
+#js-hours:after {
+  content: "HOURS";
+}
+
+#js-minutes:after {
+  content: "MINUTES";
+}
+
+#js-seconds:after {
+  content: "SECONDS";
+}
+
+@-webkit-keyframes hide-countdown {
+  to {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes hide-countdown {
+  to {
+    height: 0;
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes show-new {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-2rem) scale(0.8) rotateX(-20deg);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes show-new {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-2rem) scale(0.8) rotateX(-20deg);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+@-webkit-keyframes hide-old {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-5rem) scale(0.5) rotateX(-75deg);
+  }
+}
+@keyframes hide-old {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-5rem) scale(0.5) rotateX(-75deg);
+  }
+}
+.socialbtns {
+  position: absolute;
+}
+
+.socialbtns,
+.socialbtns ul,
+.socialbtns li {
+  margin: 0;
+  padding: 5px;
+}
+
+.socialbtns li {
+  list-style: none outside none;
+  display: flex;
+  flex-direction: column;
+}
+
+.socialbtns .fa {
+  width: 40px;
+  height: 40px;
+  color: #F2A85D;
+  display: grid;
+  place-items: center;
+  border: 1px solid #F2A85D;
+  border-radius: 22px;
+  -moz-border-radius: 22px;
+  -webkit-border-radius: 22px;
+  -o-border-radius: 22px;
+}
+
+.socialbtns .fa:hover {
+  color: #ffffff;
+  background-color: #dd8a36;
+  border: 1px solid #dd8a36;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .hero-banner {
+    background-image: url("../img/mobile-frame.png");
+  }
+  .hero-banner .hero-text-container {
+    padding-top: 100px;
+  }
+  .hero-banner .hero-text-container .wrapper {
+    margin-top: -26px;
+  }
+  .hero-banner .hero-text-container .details {
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+  .hero-banner .hero-text-container .details h2 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: black;
+  }
+  .hero-banner .hero-text-container .details h4 {
+    margin-top: 40px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color: black;
+  }
+  .number,
+.separator {
+    font-size: 2.5rem;
+  }
+  #js-days:after,
+#js-hours:after,
+#js-minutes:after,
+#js-seconds:after {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: -50px;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .socialbtns,
+.socialbtns ul,
+.socialbtns li {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero-banner .socialbtns {
+    transform: translateY(10%);
+    bottom: 3%;
+    top: 83%;
+  }
+  .countdown {
+    display: flex;
+    justify-content: space-between;
+  }
+  .collapse.show {
+    background-color: #039FA8;
+    border-radius: 5px;
+    padding: 10px 0px;
+    transition: 0.3s all;
+  }
+}/*# sourceMappingURL=style.css.map */
